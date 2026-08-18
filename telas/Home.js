@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, Pressable, ScrollView } from "react-native";
-import { Lightbulb } from 'lucide-react-native';
+import { Lightbulb, MessageCircleQuestionMark, Cat, Camera } from 'lucide-react-native';
 
 export default function Home({ navigation }) {
     return (
@@ -28,7 +28,7 @@ export default function Home({ navigation }) {
                         style={css.botao}
                         onPress={() => navigation.navigate("Curiosidades")}
                     >
-                        <Text style={css.icone}>💡</Text>
+                        <Lightbulb color={'yellow'} size={30} width={40}/>
                         <Text style={css.textoBotao}>
                             Curiosidades
                         </Text>
@@ -38,7 +38,7 @@ export default function Home({ navigation }) {
                         style={css.botao}
                         onPress={() => navigation.navigate("Especies")}
                     >
-                        <Text style={css.icone}>🐈</Text>
+                        <Cat color={'yellow'} size={30} width={40}/>
                         <Text style={css.textoBotao}>
                             Espécies
                         </Text>
@@ -48,7 +48,7 @@ export default function Home({ navigation }) {
                         style={css.botao}
                         onPress={() => navigation.navigate("Galeria")}
                     >
-                        <Text style={css.icone}>📸</Text>
+                        <Camera color={'yellow'} size={30} width={40}/>
                         <Text style={css.textoBotao}>
                             Galeria de Imagens
                         </Text>
@@ -57,11 +57,12 @@ export default function Home({ navigation }) {
                 </View>
 
                 <View style={css.caixa}>
-                    <Lightbulb />
-                    
-                    <Text style={css.tituloCaixa}>
-                         Você sabia?
-                    </Text>
+                    <View style={css.row}>
+                        <MessageCircleQuestionMark color={'purple'} size={30} width={40}/>
+                        <Text style={css.tituloCaixa}>
+                            Você sabia?
+                        </Text>
+                    </View>
 
                     <Text style={css.textoCaixa}>
                         Os gatos passam boa parte do dia dormindo.
@@ -153,4 +154,8 @@ const css = StyleSheet.create({
         fontSize: 16,
         lineHeight: 23,
     },
+    row:{
+        flexDirection: 'row',
+        alignItems: 'center',
+    }
 });
